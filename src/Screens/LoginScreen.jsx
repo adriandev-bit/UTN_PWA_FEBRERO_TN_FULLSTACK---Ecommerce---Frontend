@@ -21,7 +21,7 @@ const LoginScreen = () => {
         if (responseApiState.data && responseApiState.data.data.authorization_token) {
             login(responseApiState.data.data.authorization_token) 
             sessionStorage.setItem('username', responseApiState.data.data.username)
-            navigate('/home') 
+            navigate(ENVIROMENT.URL_API + '/home') 
             window.location.reload();
         }
     }, [responseApiState, login, navigate, formState.email])
