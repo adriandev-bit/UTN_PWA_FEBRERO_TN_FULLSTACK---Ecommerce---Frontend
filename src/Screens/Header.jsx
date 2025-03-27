@@ -12,7 +12,6 @@ const Header = () => {
   const handleLogout = () => {
     sessionStorage.removeItem("authorization_token");
     sessionStorage.removeItem("username");
-    window.location.reload();
     navigate("/login");
     
   };
