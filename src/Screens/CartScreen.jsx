@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./css/CartScreen.css";
+import ENVIROMENT from '../config/enviroment'
 
 const CartScreen = () => {
   const [cart, setCart] = useState([]);
@@ -18,7 +19,7 @@ const CartScreen = () => {
         return;
       }
 
-      const response = await fetch("http://localhost:3000/api/cart", {
+      const response = await fetch(`${ENVIROMENT.URL_API}/api/cart`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       if (!response.ok) throw new Error("Error al obtener el carrito");
@@ -38,7 +39,7 @@ const CartScreen = () => {
       const method = action === "add" ? "POST" : "DELETE";
       const body = action === "add" ? JSON.stringify({ quantity: 1, price }) : null;
 
-      const response = await fetch(`http://localhost:3000/api/cart/${productId}`, {
+      const response = await fetch(`${ENVIROMENT.URL_API}/api/cart/${productId}`, {
         method,
         headers: {
           "Content-Type": "application/json",
