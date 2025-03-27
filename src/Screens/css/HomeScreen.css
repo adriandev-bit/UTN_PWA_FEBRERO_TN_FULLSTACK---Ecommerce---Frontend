@@ -23,4 +23,41 @@ margin-top: 60px;
   overflow: hidden;
 }
 
+@media screen and (max-width: 400px) and (max-height: 866px) {
+  .home-screen {
+    flex-direction: column; /* Apila los elementos */
+  }
+.header {
+    width: 100%;
+    background-color: #faf8f8; /* Para visualizar mejor */
+    padding: 10px 0;
+  }
 
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+margin-top: -120px;
+  }
+
+  .sidebar {
+    width: 100%;
+    background-color: #f8f9fa; /* Para visualizar mejor */
+    padding: 10px 0;
+    position: static !important; /* Restablece la posición */
+  }
+
+  .product-area {
+    width: 100%;
+    flex-grow: 1;
+    padding: 10px;
+    margin-bottom: 100px;
+  }
+
+  .footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+}
