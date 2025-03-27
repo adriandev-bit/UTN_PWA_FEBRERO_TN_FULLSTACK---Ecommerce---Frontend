@@ -21,7 +21,7 @@ const CheckoutScreen = () => {
         return;
       }
 
-      const response = await fetch("http://localhost:3000/api/cart", {
+      const response = await fetch(`${ENVIROMENT.URL_API}/api/cart`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       if (!response.ok) throw new Error("Error al obtener el carrito");

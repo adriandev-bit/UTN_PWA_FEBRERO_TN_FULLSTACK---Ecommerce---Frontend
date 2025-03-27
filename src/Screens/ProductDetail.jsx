@@ -21,7 +21,7 @@ const ProductDetail = () => {
 
   const fetchProductDetails = async () => {
     try {
-      const response = await fetch(`http://localhost:3000/api/products/product/${productId}`);
+      const response = await fetch(`${ENVIROMENT.URL_API}/api/products/product/${productId}`);
       if (!response.ok) throw new Error('Error al obtener detalles del producto');
       const data = await response.json();
       setProduct(data.data.product || null); 
@@ -32,7 +32,7 @@ const ProductDetail = () => {
 
   const fetchReviews = async () => {
     try {
-      const response = await fetch(`http://localhost:3000/api/reviews/${productId}`);
+      const response = await fetch(`${ENVIROMENT.URL_API}/api/reviews/${productId}`);
       if (!response.ok) throw new Error('Error al obtener reseñas');
       const data = await response.json();
       setReviews(data.data || []);
@@ -56,7 +56,7 @@ const ProductDetail = () => {
       }
   
       
-      const response = await fetch(`http://localhost:3000/api/cart/${productId}`, {
+      const response = await fetch(`${ENVIROMENT.URL_API}/api/cart/${productId}`, {
         method: "POST",
         headers: {
           "Authorization": `Bearer ${token}`,

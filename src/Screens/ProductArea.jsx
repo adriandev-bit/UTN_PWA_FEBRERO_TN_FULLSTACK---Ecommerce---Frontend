@@ -11,10 +11,10 @@ const ProductArea = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        let url = 'http://localhost:3000/api/products';
+        let url = `${ENVIROMENT.URL_API}/api/products`;
 
         if (categoryId) {
-          url = `http://localhost:3000/api/products/${categoryId}`;
+          url = `${ENVIROMENT.URL_API}/api/products/${categoryId}`;
         }
 
         const response = await fetch(url);

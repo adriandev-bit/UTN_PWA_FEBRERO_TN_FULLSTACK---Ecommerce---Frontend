@@ -16,7 +16,7 @@ const Sidebar = ({ setCategoryId }) => {
           return;
         }
 
-        const response = await fetch("http://localhost:3000/api/categories", {
+        const response = await fetch(`${ENVIROMENT.URL_API}/api/categories`, {
           method: "GET",
           headers: {
             Authorization: `Bearer ${token}`,
