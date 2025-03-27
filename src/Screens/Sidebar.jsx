@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./css/Sidebar.css";
+import ENVIROMENT from '../config/enviroment'
 
 const Sidebar = ({ setCategoryId }) => {
   const [categories, setCategories] = useState([]);

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams, useLocation } from 'react-router-dom';
 import './css/ProductArea.css';
+import ENVIROMENT from '../config/enviroment'
 
 const ProductArea = () => {
   const { categoryId } = useParams(); 

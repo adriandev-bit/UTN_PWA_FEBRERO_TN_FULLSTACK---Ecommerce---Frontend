@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./css/CheckoutScreen.css";
+import ENVIROMENT from '../config/enviroment'
 
 const CheckoutScreen = () => {
   const [cart, setCart] = useState([]);

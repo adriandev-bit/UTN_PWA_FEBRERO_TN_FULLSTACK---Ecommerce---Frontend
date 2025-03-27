@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./css/OffersScreen.css";
+import ENVIROMENT from '../config/enviroment'
 
 const OffersScreen = () => {
   const [products, setProducts] = useState([]);

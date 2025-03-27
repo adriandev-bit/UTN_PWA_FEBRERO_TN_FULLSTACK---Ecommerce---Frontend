@@ -14,6 +14,7 @@ const Header = () => {
     sessionStorage.removeItem("username");
     window.location.reload();
     navigate("/login");
+    
   };
 
   const handleLogin = () => {
