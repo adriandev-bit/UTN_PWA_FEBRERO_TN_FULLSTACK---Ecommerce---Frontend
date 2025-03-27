@@ -1,0 +1,145 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px; 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1000; 
+}
+
+.logo {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 84px; 
+  max-width: 100%; 
+  object-fit: contain;
+  transition: height 0.3s ease; 
+}
+
+.nav-menu {
+  flex: 2;
+  text-align: center;
+}
+
+.nav-menu ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+  justify-content: center;
+}
+
+.nav-menu ul li {
+  display: inline;
+}
+
+.nav-menu ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.nav-menu ul li a:hover {
+  color: #007bff;
+}
+
+.auth {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 20px; 
+}
+
+
+.username {
+  font-size: 1rem; 
+  font-weight: bold; 
+  color: #333; 
+}
+
+
+.login-button {
+  background-color: #007bff;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+  background-color: #0056b3;
+}
+
+@media screen and (max-width: 1024px) {
+  .header {
+    padding: 10px 20px;
+  }
+
+  .logo img {
+    height: 70px; 
+  }
+
+  .nav-menu ul {
+    gap: 15px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    height: auto;
+    padding: 10px;
+  }
+
+  .logo img {
+    height: 60px; 
+  }
+
+  .nav-menu ul {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .auth {
+    justify-content: center;
+    margin-top: 10px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .logo img {
+    height: 50px; 
+  }
+
+  .nav-menu ul {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .header {
+    align-items: center;
+    text-align: center;
+  }
+}

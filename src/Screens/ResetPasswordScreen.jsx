@@ -3,7 +3,7 @@ import { useForm } from '../hooks/useForm'
 import { useApiRequest } from '../hooks/useApiRequest'
 import ENVIROMENT from '../config/enviroment'
 import { Link } from 'react-router-dom'
-import './css/ResetPasswordScreen.css' // Asegúrate de importar el archivo CSS
+import './css/ResetPasswordScreen.css' 
 
 const ResetPasswordScreen = () => {
 	const initialFormState = {

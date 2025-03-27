@@ -5,24 +5,46 @@ import RegisterScreen from './Screens/RegisterScreen'
 import ResetPasswordScreen from './Screens/ResetPasswordScreen'
 import RewritePasswordScreen from './Screens/RewritePasswordScreen'
 import ProtectedRoute from './Components/ProtectedRoute'
-import HomeScreen from './Screens/HomeSreen'
+import HomeScreen from './Screens/HomeScreen'
+import CartScreen from './Screens/CartScreen'
+import ProductDetail from './Screens/ProductDetail'
+import Header from './Screens/Header'
+import Footer from './Screens/Footer'
+import ContactScreen from './Screens/ContactScreen'
+import './Screens/css/App.css' 
+import CheckoutScreen from './Screens/CheckoutScreen'
+import OffersScreen from './Screens/OffersScreen'
 
 function App() {
-
   return (
-    <div>
-      <Routes>
-        <Route path='/login' element={<LoginScreen/>}/>
-        <Route path="/register" element={<RegisterScreen/>}/>
-        <Route path='/' element={<LoginScreen/>}/>
-        <Route path='/reset-password' element={<ResetPasswordScreen/>}/>
-        
-        <Route element={<ProtectedRoute/>}>        
-        </Route>
-        <Route path='/rewrite-password' element={<RewritePasswordScreen/>}/>
-        <Route path='/home' element={<HomeScreen />} />
+    <div className="app-container">
+      
+      <Header />
 
-      </Routes>
+      
+      <main className="app-content">
+        <Routes>
+          <Route path='/login' element={<LoginScreen />} />
+          <Route path="/register" element={<RegisterScreen />} />
+          <Route path='/' element={<LoginScreen />} />
+          <Route path='/reset-password' element={<ResetPasswordScreen />} />
+          <Route path="/categoria/:categoryId" element={<HomeScreen />} />
+          <Route path='/rewrite-password' element={<RewritePasswordScreen />} />
+          <Route path="/contacto" element={<ContactScreen />} />
+
+          
+          <Route element={<ProtectedRoute />}>
+            <Route path='/home' element={<HomeScreen />} />
+            <Route path="/producto/:productId" element={<ProductDetail />} />
+            <Route path='/cart' element={<CartScreen />} />
+            <Route path="/checkout" element={<CheckoutScreen />} />
+            <Route path="/ofertas" element={<OffersScreen />} />
+          </Route>
+        </Routes>
+      </main>
+
+      
+      <Footer />
     </div>
   )
 }

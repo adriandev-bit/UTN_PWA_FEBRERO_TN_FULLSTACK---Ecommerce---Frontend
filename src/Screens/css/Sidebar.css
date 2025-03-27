@@ -1,94 +1,74 @@
 .sidebar {
-  width: 260px;
-  background-color: #3f0e40; /* Color Slack */
-  color: white;
-  padding: 15px;
-  display: flex;
-  flex-direction: column;
+  width: 250px;
+  background-color: #f8f9fa;
+  padding: 20px;
+  height: 100%;
+  flex-shrink: 0;
+  overflow-y: auto;
+  transition: transform 0.3s ease-in-out;
 }
 
-h2 {
-  font-size: 18px;
+.sidebar h2 {
+  margin-bottom: 20px;
+  font-size: 1.5rem;
   font-weight: bold;
-  margin-bottom: 15px;
-  padding-bottom: 10px;
-  border-bottom: 1px solid #532753;
 }
 
-/* Estilos para workspaces */
-.workspace-input {
-  display: flex;
-  gap: 5px;
-  margin-bottom: 15px;
-}
-
-.workspace-input input {
-  flex: 1;
-  padding: 8px;
-  border-radius: 5px;
-  border: none;
-}
-
-.workspace-input button {
-  padding: 8px;
-  border-radius: 5px;
-  border: none;
-  cursor: pointer;
-  background-color: #532753;
-  color: white;
-}
-
-ul {
+.category-list {
   list-style: none;
   padding: 0;
+  margin-top: 20px;
 }
 
-li {
-  margin-bottom: 8px;
+.category-list li {
+  margin-bottom: 10px;
 }
 
-button {
+.category-button {
   width: 100%;
-  text-align: left;
-  background: none;
-  border: none;
-  color: white;
-  cursor: pointer;
   padding: 10px;
-}
-
-button:hover {
-  background-color: #6d3b6b;
-}
-
-/* Estilos para canales */
-.channel-list {
-  margin-left: 10px;
-}
-
-.channel {
-  padding: 8px 12px;
-  font-size: 14px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  cursor: pointer;
-}
-
-.channel:hover {
-  background-color: #532753;
-}
-
-.channel.active {
-  background-color: #6d3b6b;
-  font-weight: bold;
-}
-
-/* Botón de eliminar */
-.delete {
-  background: none;
+  background-color: #007bff;
+  color: white;
   border: none;
-  color: red;
-  font-size: 14px;
+  text-align: left;
+  font-size: 1.1rem;
+  border-radius: 5px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
+
+.category-button:hover {
+  background-color: #0056b3;
+}
+
+.no-categories {
+  color: #999;
+}
+
+
+
+@media screen and (max-width: 768px) {
+  .sidebar {
+    width: 180px;
+    padding: 10px;
+  }
+
+  .sidebar h2 {
+    font-size: 1.2rem;
+  }
+
+  .category-button {
+    font-size: 1rem;
+    padding: 8px;
+  }
+}
+
+
+@media screen and (max-width: 480px) {
+  .sidebar {
+    position: fixed;
+    top: 0px; 
+    left: -100%;
+  }
+}
+
