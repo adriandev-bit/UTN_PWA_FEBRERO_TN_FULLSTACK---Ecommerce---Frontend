@@ -83,7 +83,11 @@ export const RegisterScreen = () => {
 
         
         <div className="links">
-          <p>¿Ya tienes cuenta? <a href="/login" className="login-link">Inicia sesión</a></p>
+          <p>¿Ya tienes cuenta? 
+            
+            {/* <a href="/login" className="login-link">Inicia sesión</a> */}
+            <Link to={'/login'} className="login-link">Ya tengo cuenta</Link>
+            </p>
         </div>
       </form>
     </div>
