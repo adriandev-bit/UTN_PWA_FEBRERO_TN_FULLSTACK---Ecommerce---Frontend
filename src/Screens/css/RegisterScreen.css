@@ -82,7 +82,7 @@
     flex-direction: column;
     height: 100vh;
     padding: 20px;
-    margin-top: -60px;
+    margin-top: 0px;
   }
 
   .register-title {

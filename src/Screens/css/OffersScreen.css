@@ -1,11 +1,18 @@
 .offers-screen {
-  text-align: center;
-  padding: 20px;
-  margin-top: 60px;
   display: flex;
   flex-direction: column;
-  align-items: center; 
-  justify-content: center;
+  min-height: 100vh; /* Hace que el contenedor ocupe toda la pantalla */
+ 
+  padding: 20px;
+  margin-top: 50px;
+}
+
+.offers-list {
+  flex-grow: 1; /* Hace que la lista de ofertas ocupe el espacio disponible */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
 }
 
 .offers-list ul {

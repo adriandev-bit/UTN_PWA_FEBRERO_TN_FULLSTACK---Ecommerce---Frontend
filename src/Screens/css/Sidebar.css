@@ -85,10 +85,11 @@
   .category-button {
     font-size: 1rem;
     padding: 15px;
-    width: 90%; /* Se ajusta mejor en pantallas pequeñas */
+    width: 100%; /* Hacer que el botón ocupe todo el ancho disponible */
+    max-width: 350px; /* Limita el tamaño máximo del botón */
     text-align: center;
     border-radius: 5px; /* Bordes redondeados */
-    margin: 10px 0; /* Añadir margen entre los botones */
+    margin: 10px auto; /* Centra el botón y añade margen superior e inferior */
     background-color: #007bff; /* Fondo azul */
     color: white; /* Texto blanco */
     border: none; /* Sin bordes */
