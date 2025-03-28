@@ -89,3 +89,37 @@
 .back-btn:hover {
   background-color: #0056b3;
 }
+
+@media screen and (max-width: 400px) {
+
+  .offers-screen {
+
+    margin-top: 150px;
+
+  }
+
+  .offers-list ul {
+    grid-template-columns: 1fr; /* Muestra una sola columna de ofertas */
+    gap: 15px; /* Reduce el espacio entre las ofertas */
+  }
+
+  .offer-item {
+    max-width: 90%; /* Ajusta el ancho máximo de las ofertas */
+    margin: 10px auto; /* Centra las ofertas */
+  }
+
+  .offer-img {
+    width: 120px;
+    height: 120px; /* Ajusta el tamaño de la imagen */
+  }
+
+  .price-details {
+    margin-top: 10px; /* Espacio superior para los precios */
+  }
+
+  .back-btn {
+    width: 100%; /* Hace el botón de retroceso más grande */
+    padding: 12px; /* Más padding para mejor clicabilidad */
+    font-size: 1.2rem; /* Aumenta el tamaño de la fuente del botón */
+  }
+}
