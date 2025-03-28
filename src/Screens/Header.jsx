@@ -13,7 +13,6 @@ const Header = () => {
     sessionStorage.removeItem("authorization_token");
     sessionStorage.removeItem("username");
     navigate("/login", { replace: true });  // Redirige a login sin recargar
-    window.location.reload();  // Recarga la página para limpiar cualquier estado residual
   };
 
   const handleLogin = () => {
