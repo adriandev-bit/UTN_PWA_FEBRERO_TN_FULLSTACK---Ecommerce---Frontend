@@ -126,6 +126,7 @@ ul {
   .cart-screen {
     padding: 10px;
     margin-bottom: 60px;
+    margin-top: -50px;
   }
 
   .cart-screen h2 {
