@@ -92,6 +92,7 @@
     .login-container {
       padding: 20px;
       height: auto; /* Permite que el contenido se ajuste mejor */
+      margin-top: 90px;
     }
   
     .login-title {
