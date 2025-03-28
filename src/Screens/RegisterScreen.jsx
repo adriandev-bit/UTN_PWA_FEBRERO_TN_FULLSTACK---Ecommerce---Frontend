@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import ENVIROMENT from '../config/enviroment';
 import './css/RegisterScreen.css';
+import { Link } from 'react-router-dom'
 
 export const RegisterScreen = () => {
   const formInitialState = {
