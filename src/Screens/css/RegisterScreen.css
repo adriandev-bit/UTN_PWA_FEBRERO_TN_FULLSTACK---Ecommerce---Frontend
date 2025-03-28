@@ -76,3 +76,50 @@
     text-decoration: underline;
 }
 
+@media screen and (max-width: 400px) and (max-height: 866px) {
+    .register-container {
+      padding: 20px;
+      height: auto; /* Ajuste automático para evitar problemas con 100vh */
+    }
+  
+    .register-title {
+      font-size: 1.5rem;
+      text-align: center;
+      margin-bottom: 15px;
+    }
+  
+    .register-form {
+      padding: 20px;
+      max-width: 100%;
+      box-shadow: none; /* Evita sombras fuertes en pantallas pequeñas */
+    }
+  
+    .input-container {
+      margin-bottom: 15px;
+    }
+  
+    .input-container label {
+      font-size: 0.9rem;
+    }
+  
+    .input-container input {
+      padding: 8px;
+      font-size: 0.9rem;
+    }
+  
+    .submit-button {
+      font-size: 1rem;
+      padding: 8px;
+      width: 100%;
+    }
+  
+    .links {
+      margin-top: 15px;
+      font-size: 0.9rem;
+    }
+  
+    .login-link {
+      font-size: 0.9rem;
+    }
+  }
+  
