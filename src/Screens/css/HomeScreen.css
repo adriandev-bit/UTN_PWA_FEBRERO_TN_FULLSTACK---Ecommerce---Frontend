@@ -31,7 +31,7 @@ margin-top: 60px;
   .content {
     flex-direction: column; /* Asegura que los elementos se apilen */
     width: 100%;
-    margin-top: 0; /* Ajusta el margen superior */
+    margin-top: 50px; /* Ajusta el margen superior */
   }
 
   .sidebar {
