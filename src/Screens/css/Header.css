@@ -132,38 +132,58 @@
   .header {
     flex-direction: column;
     height: auto;
-    padding: 5px;
+    padding: 10px;
+    background-color: #007bff; /* Fondo más llamativo */
+    text-align: center;
   }
 
   .logo img {
-    height: 45px;
+    height: 50px;
   }
 
   .nav-menu ul {
     flex-direction: column;
-    gap: 5px;
+    gap: 8px;
     padding: 0;
   }
 
   .auth {
     justify-content: center;
-    margin-top: 5px;
+    margin-top: 10px;
   }
 
   .login-button {
     width: 100%;
-    padding: 10px;
-    font-size: 1em;
+    padding: 12px;
+    font-size: 1.2em;
     text-align: center;
+    font-weight: bold;
+    background-color: #28a745; /* Verde para llamar la atención */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s;
+  }
+
+  .login-button:hover {
+    background-color: #218838;
+    transform: scale(1.05);
   }
 
   .user-info {
     flex-direction: column;
-    gap: 5px;
+    gap: 8px;
     text-align: center;
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   }
 
   .username {
-    font-size: 0.9rem;
+    font-size: 1rem;
+    font-weight: bold;
   }
 }
+
