@@ -12,7 +12,8 @@ const Header = () => {
   const handleLogout = () => {
     sessionStorage.removeItem("authorization_token");
     sessionStorage.removeItem("username");
-    navigate("/login", { replace: true });  // Redirige a login sin recargar
+    navigate("/login");  
+    navigate("/login");  
   };
 
   const handleLogin = () => {

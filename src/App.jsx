@@ -14,6 +14,7 @@ import ContactScreen from './Screens/ContactScreen'
 import './Screens/css/App.css' 
 import CheckoutScreen from './Screens/CheckoutScreen'
 import OffersScreen from './Screens/OffersScreen'
+import { Navigate } from "react-router-dom";
 
 function App() {
   return (
