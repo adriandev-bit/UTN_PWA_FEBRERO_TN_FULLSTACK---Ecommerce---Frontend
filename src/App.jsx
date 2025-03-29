@@ -26,16 +26,16 @@ function App() {
       <main className="app-content">
         <Routes>
           <Route path='/login' element={<LoginScreen />} />
-          <Route path="/register" element={<RegisterScreen />} />
-          <Route path='/' element={<LoginScreen />} />
-          <Route path='/reset-password' element={<ResetPasswordScreen />} />
-          <Route path="/categoria/:categoryId" element={<HomeScreen />} />
+          <Route path="/register" element={<RegisterScreen />} />          
+          <Route path='/reset-password' element={<ResetPasswordScreen />} />         
           <Route path='/rewrite-password' element={<RewritePasswordScreen />} />
           <Route path="/contacto" element={<ContactScreen />} />
 
-          
+
           <Route element={<ProtectedRoute />}>
+             <Route path='/' element={<LoginScreen />} />
             <Route path='/home' element={<HomeScreen />} />
+            <Route path="/categoria/:categoryId" element={<HomeScreen />} />
             <Route path="/producto/:productId" element={<ProductDetail />} />
             <Route path='/cart' element={<CartScreen />} />
             <Route path="/checkout" element={<CheckoutScreen />} />

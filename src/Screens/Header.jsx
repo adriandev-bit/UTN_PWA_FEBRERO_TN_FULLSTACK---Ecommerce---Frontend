@@ -13,13 +13,12 @@ const Header = () => {
     sessionStorage.removeItem("authorization_token");
     sessionStorage.removeItem("username");
     navigate("/login");  
-    navigate("/login");  
   };
 
-  const handleLogin = () => {
-    window.location.href = "/"; // Redirige completamente a la raíz
-  };
-  
+const handleLogin = () => {
+  window.location.href = "/"; 
+};
+
 
   return (
     <header className="header">

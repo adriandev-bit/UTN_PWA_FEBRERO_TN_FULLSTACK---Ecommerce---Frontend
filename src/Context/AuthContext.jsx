@@ -1,34 +1,39 @@
 import { createContext, useEffect, useState } from "react";
 
-export const AuthContext = createContext()
+export const AuthContext = createContext();
 
-const AuthContextProvider = ({children}) =>{
-    /* Aca manejen todas las funcionalidades relacionadas al usuario y auth */
-    let isAuthenticatedInitialState = sessionStorage.getItem('authorization_token')
-    const [isAuthenticatedState, setIsAutheticatedState] = useState(isAuthenticatedInitialState)
-    useEffect(
-        () =>{
-            const token = sessionStorage.getItem('authorization_token')
-            if(token){
-                setIsAutheticatedState(true)
-            }
-        },
-        []
-    )
-    const logout = () =>{
-        sessionStorage.removeItem('authorization_token')
-        setIsAutheticatedState(false)
+const AuthContextProvider = ({ children }) => {
+  // Inicializa el estado de autenticación verificando si hay un token
+  const isAuthenticatedInitialState = !!sessionStorage.getItem('authorization_token');
+  const [isAuthenticatedState, setIsAutheticatedState] = useState(isAuthenticatedInitialState);
+
+  useEffect(() => {
+    // Si el token está presente en sessionStorage, se marca al usuario como autenticado
+    const token = sessionStorage.getItem('authorization_token');
+    if (token) {
+      setIsAutheticatedState(true);
+    } else {
+      setIsAutheticatedState(false);
     }
+  }, []); // Solo se ejecuta una vez cuando el componente se monta
 
-    const login = (authorization_token) => {
-        sessionStorage.setItem('authorization_token', authorization_token)
-        setIsAutheticatedState(true)
-    }
-    return (
-        <AuthContext.Provider value={{isAuthenticatedState, logout, login}}>
-            {children}
-        </AuthContext.Provider>
-    )
-}
+  // Función de logout
+  const logout = () => {
+    sessionStorage.removeItem('authorization_token');  // Elimina el token
+    setIsAutheticatedState(false);  // Cambia el estado de autenticación
+  };
 
-export default AuthContextProvider
+  // Función de login
+  const login = (authorization_token) => {
+    sessionStorage.setItem('authorization_token', authorization_token);  // Guarda el token
+    setIsAutheticatedState(true);  // Cambia el estado de autenticación
+  };
+
+  return (
+    <AuthContext.Provider value={{ isAuthenticatedState, logout, login }}>
+      {children}
+    </AuthContext.Provider>
+  );
+};
+
+export default AuthContextProvider;
