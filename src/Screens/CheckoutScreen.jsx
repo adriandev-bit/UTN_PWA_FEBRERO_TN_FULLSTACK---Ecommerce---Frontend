@@ -11,8 +11,8 @@ const CheckoutScreen = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    window.scrollTo(0, 0); // Mueve la página al inicio al cargar
     fetchCart();
+    window.scrollTo(0, 0); 
   }, []);
 
   const fetchCart = async () => {

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Header from "./Header";
 import Sidebar from "./Sidebar";
 import ProductArea from "./ProductArea";
@@ -7,7 +7,9 @@ import "./css/HomeScreen.css";
 const HomeScreen = () => {
   const [categoryId, setCategoryId] = useState(null);  
   
-
+  useEffect(() => {
+    window.scrollTo(0, 0); // Siempre scrollea al inicio al cargar
+  }, []);
 
   return (
     <div className="home-screen">
