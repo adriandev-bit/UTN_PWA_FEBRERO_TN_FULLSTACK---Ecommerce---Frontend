@@ -17,8 +17,9 @@ const Header = () => {
   };
 
   const handleLogin = () => {
-    navigate("/login");
+    window.location.href = "/"; // Redirige completamente a la raíz
   };
+  
 
   return (
     <header className="header">
