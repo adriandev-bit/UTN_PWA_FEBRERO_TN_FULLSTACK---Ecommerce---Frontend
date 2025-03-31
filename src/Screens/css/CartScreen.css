@@ -115,10 +115,12 @@ ul {
   background-color: #218838; 
 }
 
-.cart-screen {
-  padding: 10px;
-  margin-bottom: 70px;
-  margin-top: 150px;
+
+.cart-img {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 10px;
+  object-fit: contain;
 }
 
 
