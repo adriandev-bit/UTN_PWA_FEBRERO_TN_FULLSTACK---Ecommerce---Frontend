@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import "./css/Sidebar.css";
-import ENVIROMENT from '../config/enviroment'
+import ENVIROMENT from '../config/enviroment';
 
 const Sidebar = ({ setCategoryId }) => {
   const [categories, setCategories] = useState([]);
+  const [selectedCategoryId, setSelectedCategoryId] = useState(null);
   const [error, setError] = useState(null);
   const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const fetchCategories = async () => {
@@ -32,11 +34,10 @@ const Sidebar = ({ setCategoryId }) => {
         const data = await response.json();
         setCategories(data.data.categories || []);
 
-             
-                if (data.data.categories.length > 0) {
-                  setCategoryId(data.data.categories[0]._id);  
-                }
-
+        // Si estás en la vista principal, no marcar ninguna categoría
+        if (!location.pathname.includes("/categoria/")) {
+          setSelectedCategoryId(null);
+        }
       } catch (error) {
         console.error("Error al obtener categorías:", error);
         setError(error.message);
@@ -44,11 +45,12 @@ const Sidebar = ({ setCategoryId }) => {
     };
 
     fetchCategories();
-  }, []);
+  }, [location.pathname]);
 
   const handleCategorySelect = (categoryId) => {
-    setCategoryId(categoryId); 
-    navigate(`/categoria/${categoryId}`); 
+    setCategoryId(categoryId);
+    setSelectedCategoryId(categoryId);
+    navigate(`/categoria/${categoryId}`);
   };
 
   return (
@@ -61,7 +63,7 @@ const Sidebar = ({ setCategoryId }) => {
           categories.map((category) => (
             <li key={category._id}>
               <button
-                className="category-button"
+                className={`category-button ${selectedCategoryId === category._id ? "active" : ""}`}
                 onClick={() => handleCategorySelect(category._id)}
                 aria-label={`Seleccionar categoría ${category.name}`}
               >

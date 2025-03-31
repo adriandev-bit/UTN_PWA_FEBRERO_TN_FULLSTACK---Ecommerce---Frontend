@@ -45,6 +45,13 @@
   color: #999;
 }
 
+.category-button.active {
+  background-color: #003f87 !important; /* Color más oscuro para la categoría seleccionada */
+  font-weight: bold; /* Hace el texto un poco más grueso */
+  border: 2px solid #001f4d; /* Agrega un borde sutil */
+}
+
+
 
 
 @media screen and (max-width: 768px) {
