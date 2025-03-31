@@ -34,7 +34,7 @@ const Sidebar = ({ setCategoryId }) => {
         const data = await response.json();
         setCategories(data.data.categories || []);
 
-        // Si estás en la vista principal, no marcar ninguna categoría
+        
         if (!location.pathname.includes("/categoria/")) {
           setSelectedCategoryId(null);
         }

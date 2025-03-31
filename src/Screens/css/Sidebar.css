@@ -46,9 +46,9 @@
 }
 
 .category-button.active {
-  background-color: #003f87 !important; /* Color más oscuro para la categoría seleccionada */
-  font-weight: bold; /* Hace el texto un poco más grueso */
-  border: 2px solid #001f4d; /* Agrega un borde sutil */
+  background-color: #003f87 !important; 
+  font-weight: bold; 
+  border: 2px solid #001f4d; 
 }
 
 
@@ -73,13 +73,13 @@
 
 @media screen and (max-width: 400px) {
   .sidebar {
-    position: relative !important; /* Mantenerlo visible */
-    width: 100% !important;  /* Ocupar todo el ancho */
-    left: 0 !important; /* Se asegura que no quede fuera */
-    height: auto; /* Ajuste dinámico */
+    position: relative !important; 
+    width: 100% !important;  
+    left: 0 !important; 
+    height: auto; 
     padding: 15px;
-    background-color: #f8f9fa; /* Mantiene el diseño */
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Un poco de sombra */
+    background-color: #f8f9fa; 
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
   }
 
   .category-list {
@@ -92,25 +92,25 @@
   .category-button {
     font-size: 1rem;
     padding: 15px;
-    width: 100%; /* Hacer que el botón ocupe todo el ancho disponible */
-    max-width: 350px; /* Limita el tamaño máximo del botón */
+    width: 100%; 
+    max-width: 350px; 
     text-align: center;
-    border-radius: 5px; /* Bordes redondeados */
-    margin: 10px auto; /* Centra el botón y añade margen superior e inferior */
-    background-color: #007bff; /* Fondo azul */
-    color: white; /* Texto blanco */
-    border: none; /* Sin bordes */
-    cursor: pointer; /* Indica que es clickeable */
-    transition: background-color 0.3s ease, transform 0.2s ease; /* Efectos de transición */
+    border-radius: 5px; 
+    margin: 10px auto; 
+    background-color: #007bff; 
+    color: white; 
+    border: none; 
+    cursor: pointer; 
+    transition: background-color 0.3s ease, transform 0.2s ease; 
   }
 
   .category-button:hover {
-    background-color: #0056b3; /* Cambio de color al pasar el cursor */
-    transform: translateY(-3px); /* Efecto de levitación al pasar el cursor */
+    background-color: #0056b3; 
+    transform: translateY(-3px); 
   }
 
   .category-button:active {
-    transform: translateY(1px); /* Efecto de presionar el botón */
-    background-color: #003f87; /* Color más oscuro al hacer clic */
+    transform: translateY(1px); 
+    background-color: #003f87; 
   }
 }

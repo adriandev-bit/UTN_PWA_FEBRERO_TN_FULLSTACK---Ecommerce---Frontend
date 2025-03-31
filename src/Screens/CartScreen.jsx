@@ -71,7 +71,7 @@ const CartScreen = () => {
   const handleBuy = () => {
     
     navigate("/checkout"); 
-    window.scrollTo(0, 0); // Mueve la página al inicio
+    window.scrollTo(0, 0); 
   };
 
   return (

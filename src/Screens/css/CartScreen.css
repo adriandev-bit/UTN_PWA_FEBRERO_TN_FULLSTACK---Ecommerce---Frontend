@@ -19,7 +19,7 @@ body, .cart-screen {
 }
 
 .cart-screen p {
-  text-align: center;
+  text-align: left;
   font-size: 1.2em;
 }
 
@@ -38,12 +38,6 @@ ul {
   background-color: #f9f9f9;
 }
 
-.cart-img {
-  width: 100px;
-  height: 100px;
-  object-fit: contain;
-  margin-right: 15px;
-}
 
 .cart-item h3 {
   font-size: 1.2em;
@@ -51,8 +45,8 @@ ul {
 }
 
 .cart-item p {
-  font-size: 1em;
-  color: #555;
+  font-size: 1.2em;
+  color: #352828;
 }
 
 .cart-actions {
@@ -122,6 +116,8 @@ ul {
 }
 
 
+
+
 @media (max-width: 400px) and (max-height: 866px) {
   .cart-screen {
     padding: 10px;
@@ -143,6 +139,7 @@ ul {
     width: 80px;
     height: 80px;
     margin-bottom: 10px;
+    object-fit: contain;
   }
 
   .cart-actions {

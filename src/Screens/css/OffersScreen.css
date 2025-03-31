@@ -1,14 +1,14 @@
 .offers-screen {
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* Hace que el contenedor ocupe toda la pantalla */
+  min-height: 100vh; 
  
   padding: 20px;
   margin-top: 50px;
 }
 
 .offers-list {
-  flex-grow: 1; /* Hace que la lista de ofertas ocupe el espacio disponible */
+  flex-grow: 1; 
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -106,27 +106,27 @@
   }
 
   .offers-list ul {
-    grid-template-columns: 1fr; /* Muestra una sola columna de ofertas */
-    gap: 15px; /* Reduce el espacio entre las ofertas */
+    grid-template-columns: 1fr; 
+    gap: 15px; 
   }
 
   .offer-item {
-    max-width: 90%; /* Ajusta el ancho máximo de las ofertas */
-    margin: 10px auto; /* Centra las ofertas */
+    max-width: 90%; 
+    margin: 10px auto; 
   }
 
   .offer-img {
     width: 120px;
-    height: 120px; /* Ajusta el tamaño de la imagen */
+    height: 120px; 
   }
 
   .price-details {
-    margin-top: 10px; /* Espacio superior para los precios */
+    margin-top: 10px; 
   }
 
   .back-btn {
-    width: 100%; /* Hace el botón de retroceso más grande */
-    padding: 12px; /* Más padding para mejor clicabilidad */
-    font-size: 1.2rem; /* Aumenta el tamaño de la fuente del botón */
+    width: 100%; 
+    padding: 12px; 
+    font-size: 1.2rem; 
   }
 }

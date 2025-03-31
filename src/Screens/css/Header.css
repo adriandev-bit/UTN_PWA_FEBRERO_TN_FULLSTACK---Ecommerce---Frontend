@@ -141,10 +141,10 @@
   }
 
   .nav-menu ul {
-    display: flex; /* Mantiene los elementos en línea */
-    flex-direction: row; /* Asegura la alineación horizontal */
-    justify-content: center; /* Centra los elementos */
-    gap: 10px; /* Espacio entre ellos */
+    display: flex; 
+    flex-direction: row; 
+    justify-content: center; 
+    gap: 10px; 
     padding: 0;
   }
 

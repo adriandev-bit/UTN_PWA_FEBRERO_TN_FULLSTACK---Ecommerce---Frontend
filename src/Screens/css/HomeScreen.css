@@ -25,26 +25,26 @@ margin-top: 60px;
 
 @media screen and (max-width: 400px) {
   .home-screen {
-    flex-direction: column; /* Apilar los elementos verticalmente */
+    flex-direction: column; 
   }
 
   .content {
-    flex-direction: column; /* Asegura que los elementos se apilen */
+    flex-direction: column; 
     width: 100%;
-    margin-top: 70px; /* Ajusta el margen superior */
+    margin-top: 70px; 
   }
 
   .sidebar {
-    width: 100%; /* El sidebar ocupará el 100% del ancho */
-    order: -1; /* Asegura que el sidebar aparezca arriba */
+    width: 100%; 
+    order: -1; 
     background-color: #f8f9fa;
     padding: 15px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Agrega sombra para resaltar */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
   }
 
   .product-area {
     width: 100%;
     padding: 10px;
-    margin-top: 10px; /* Separación entre el sidebar y los productos */
+    margin-top: 10px; 
   }
 }

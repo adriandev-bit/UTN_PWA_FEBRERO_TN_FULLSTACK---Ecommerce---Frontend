@@ -101,14 +101,14 @@
   .login-title {
     font-size: 1.5rem;
     text-align: center;
-    margin-bottom: 10px; /* Reducido el margen inferior */
+    margin-bottom: 10px; 
   }
 
   .login-form {
     padding: 20px;
     max-width: 100%;
     box-shadow: none;
-    margin-top: 5px; /* Agregado margen superior pequeño para reducir la separación */
+    margin-top: 5px; 
   }
 
   .input-container {

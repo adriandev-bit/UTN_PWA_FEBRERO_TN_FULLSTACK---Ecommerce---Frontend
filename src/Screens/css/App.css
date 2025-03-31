@@ -28,8 +28,8 @@ html, body {
 
 @media screen and (max-width: 400px) and (max-height: 866px) {
     html, body {
-        background-color: #ffffff; /* Un color más claro para mejor visibilidad */
-        overflow-x: hidden; /* Evita desplazamiento horizontal no deseado */
+        background-color: #ffffff; 
+        overflow-x: hidden; 
     }
 
     .app-container {
@@ -40,7 +40,7 @@ html, body {
     }
 
     .app-content {
-        margin-top: 50px; /* Reduce el margen superior para mejor ajuste */
+        margin-top: 50px; 
         width: 100%;
         height: auto;
         align-items: center;

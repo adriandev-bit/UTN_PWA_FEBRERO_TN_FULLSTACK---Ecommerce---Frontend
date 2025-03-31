@@ -93,7 +93,7 @@
   text-decoration: underline;
 }
 
-/* Ajustes para pantallas pequeñas */
+
 @media (max-width: 480px) {
   .contact-container {
     width: 95%;

@@ -8,7 +8,7 @@ const HomeScreen = () => {
   const [categoryId, setCategoryId] = useState(null);  
   
   useEffect(() => {
-    window.scrollTo(0, 0); // Siempre scrollea al inicio al cargar
+    window.scrollTo(0, 0); 
   }, []);
 
   return (
