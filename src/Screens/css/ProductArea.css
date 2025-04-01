@@ -7,6 +7,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start; 
+  font-family: Proxima Nova, -apple-system, Roboto, Arial, sans-serif;
 }
 
 
@@ -36,6 +37,11 @@
   cursor: pointer;
 }
 
+.product-card h3 {
+  font-size: 1.1rem;
+  margin: 10px 0;
+  color: #333;
+}
 
 .product-card img {
   width: 100%;
