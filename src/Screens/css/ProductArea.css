@@ -1,91 +1,156 @@
-
 .product-area {
   flex-grow: 1;
-  padding: 20px;
+  padding: 32px;
   overflow-y: auto;
   min-height: 100vh; 
   display: flex;
   flex-direction: column;
   align-items: flex-start; 
-  font-family: Proxima Nova, -apple-system, Roboto, Arial, sans-serif;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: #f8f9fa;
 }
-
 
 .product-list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 15px;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 24px;
   padding-right: 10px;
-  margin-top: 10px;
+  margin-top: 20px;
   width: 100%;
 }
-
 
 .product-card {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  border: 1px solid #ddd;
-  padding: 15px;
+  justify-content: space-between;
+  border: none;
+  padding: 20px;
   text-align: center;
-  border-radius: 8px;
+  border-radius: 12px;
   background-color: #fff;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   max-width: 100%;
   cursor: pointer;
+  position: relative;
+  overflow: visible;
 }
 
 .product-card h3 {
   font-size: 1.1rem;
-  margin: 10px 0;
-  color: #333;
+  margin: 12px 0;
+  color: #2d3748;
+  font-weight: 600;
+  line-height: 1.4;
 }
 
 .product-card img {
   width: 100%;
-  height: 200px;
+  height: 220px;
   object-fit: contain;
   border-radius: 8px;
+  transition: transform 0.3s ease;
 }
-
 
 .product-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
 }
 
+.product-card:hover img {
+  transform: scale(1.05);
+}
+
+.price-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  margin-top: 8px;
+}
+
+.original-price {
+  text-decoration: line-through;
+  color: #a0aec0;
+  font-size: 0.9rem;
+}
+
+.discount-price {
+  color: #e53e3e;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
 
 .view-all-container {
   display: flex;
   justify-content: center;
   width: 100%;
-  margin-top: 20px;
+  margin-top: 32px;
+  margin-bottom: 16px;
 }
 
-
 .view-all-button {
-  padding: 10px 20px;
+  padding: 12px 24px;
   font-size: 1rem;
-  background-color: #007bff;
+  background-color: #4a5568;
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  letter-spacing: 0.5px;
 }
 
 .view-all-button:hover {
-  background-color: #0056b3;
+  background-color: #2d3748;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-
-
+.on-sale::before {
+  content: "OFERTA";
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background-color: #e53e3e;
+  color: white;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 4px rgba(229, 62, 62, 0.3);
+  z-index: 10;
+}
 
 @media screen and (max-width: 1024px) {
+  .product-area {
+    padding: 20px;
+  }
+
   .product-list {
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+  }
+
+  .product-card {
+    padding: 16px;
+  }
+
+  .product-card img {
+    height: 180px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .product-area {
+    padding: 16px;
+  }
+
+  .product-list {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
     gap: 12px;
   }
 
@@ -94,43 +159,10 @@
   }
 
   .product-card img {
-    height: 180px;
-  }
-}
-
-
-@media screen and (max-width: 768px) {
-  .product-list {
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    gap: 10px;
+    height: 160px;
   }
 
-  .product-card {
-    padding: 10px;
-  }
-
-  .product-card img {
-    height: 150px;
-  }
-}
-
-
-@media screen and (max-width: 480px) {
-  .product-list {
-    grid-template-columns: repeat(2, 1fr); 
-    gap: 8px;
-  }
-
-  .product-card {
-    padding: 8px;
-  }
-
-  .product-card img {
-    height: 130px;
-  }
-
-  .view-all-button {
-    font-size: 0.9rem;
-    padding: 8px 15px;
+  .product-card h3 {
+    font-size: 1rem;
   }
 }

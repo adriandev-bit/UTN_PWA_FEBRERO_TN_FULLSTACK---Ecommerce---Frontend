@@ -1,17 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import './css/ProductDetail.css';
-import ENVIROMENT from '../config/enviroment'
+import ENVIROMENT from '../config/enviroment';
+import { FiShoppingCart, FiMinus, FiPlus, FiArrowLeft, FiStar } from 'react-icons/fi';
 
 const ProductDetail = () => {
-  const { productId } = useParams(); 
+  const { productId } = useParams();
   const [product, setProduct] = useState(null);
   const [reviews, setReviews] = useState([]);
-  const [quantity, setQuantity] = useState(1); 
+  const [quantity, setQuantity] = useState(1);
   const navigate = useNavigate();
 
   useEffect(() => {
-    window.scrollTo(0, 0); 
+    window.scrollTo(0, 0);
     if (productId) {
       fetchProductDetails();
       fetchReviews();
@@ -25,7 +26,7 @@ const ProductDetail = () => {
       const response = await fetch(`${ENVIROMENT.URL_API}/api/products/product/${productId}`);
       if (!response.ok) throw new Error('Error al obtener detalles del producto');
       const data = await response.json();
-      setProduct(data.data.product || null); 
+      setProduct(data.data.product || null);
     } catch (error) {
       console.error('Error al obtener detalles del producto:', error);
     }
@@ -44,19 +45,16 @@ const ProductDetail = () => {
 
   const handleAddToCart = async () => {
     try {
-      
       if (!product) {
         throw new Error("Producto no encontrado");
       }
-  
+
       const token = sessionStorage.getItem("authorization_token");
-  
-      
+
       if (!token) {
         throw new Error("No se encontró el token de autenticación");
       }
-  
-      
+
       const response = await fetch(`${ENVIROMENT.URL_API}/api/cart/${productId}`, {
         method: "POST",
         headers: {
@@ -66,73 +64,111 @@ const ProductDetail = () => {
         body: JSON.stringify({
           product: productId,
           quantity: quantity,
-          price: product.onSale ? product.discountPrice : product.price, 
+          price: product.onSale ? product.discountPrice : product.price,
         }),
       });
-  
-      
+
       if (!response.ok) {
         throw new Error("Error al agregar producto al carrito");
       }
-  
-      
+
       navigate("/cart");
     } catch (error) {
       console.error("Error al agregar al carrito:", error);
     }
   };
 
-  if (!product) return <p>Cargando detalles del producto...</p>;
+  const handleQuantityChange = (change) => {
+    setQuantity(prev => Math.max(1, prev + change));
+  };
+
+  if (!product) {
+    return (
+      <div className="product-detail-container">
+        <div className="product-detail">
+          <p>Cargando detalles del producto...</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
-    <div className="product-detail">
-      
-      <button className="back-btn" onClick={() => navigate(`/home`)}>⬅ Volver</button>
-      <h2>{product.name}</h2>
-      <img src={product.image} alt={product.name} className="product-image" />
-      <p>{product.description}</p>
-
-     
-      {product.onSale ? (
-        <div className="product-price">
-          <span className="original-price">${product.price}</span> 
-          <span className="discount-price">${product.discountPrice}</span> 
+    <div className="product-detail-container">
+      <div className="product-detail">
+        <div className="product-image-section">
+          <img src={product.image} alt={product.name} />
         </div>
-      ) : (
-        <span className="product-price">${product.price}</span>  
-      )}
-
-      <div className="add-to-cart-container">
-        <div className="quantity-selector">
-          <button 
-            className="quantity-btn" 
-            onClick={() => setQuantity(prev => prev > 1 ? prev - 1 : prev)}
-          >
-            -
+        
+        <div className="product-info-section">
+          <button className="back-button" onClick={() => navigate('/home')}>
+            <FiArrowLeft /> Volver
           </button>
-          <span>{quantity}</span>
-          <button 
-            className="quantity-btn" 
-            onClick={() => setQuantity(prev => prev + 1)}
-          >
-            +
-          </button>
-        </div>
+          
+          <h3>{product.name}</h3>
+          <p className="description">{product.description}</p>
 
-        <button className="add-to-cart-btn" onClick={handleAddToCart}>Agregar al carrito</button>
-      </div>
-
-      <h3>Reseñas</h3>
-      {reviews.length > 0 ? (
-        reviews.map((review) => (
-          <div key={review._id} className="review-card">
-            <p><strong>{review.reviewer.username}</strong>: {review.content}</p>
-            <span>⭐ {review.rating}/5</span>
+          <div className="price-section">
+            {product.onSale ? (
+              <>
+                <div className="price">
+                  ${product.discountPrice}
+                  <span className="original-price">${product.price}</span>
+                  <span className="discount-label">
+                    {Math.round(((product.price - product.discountPrice) / product.price) * 100)}% OFF
+                  </span>
+                </div>
+              </>
+            ) : (
+              <div className="price">${product.price}</div>
+            )}
           </div>
-        ))
-      ) : (
-        <p>No hay reseñas para este producto.</p>
-      )}
+
+          <div className="cart-actions">
+            <div className="quantity-controls">
+              <button className="quantity-btn" onClick={() => handleQuantityChange(-1)}>
+                <FiMinus />
+              </button>
+              <span className="cart-count">{quantity}</span>
+              <button className="quantity-btn" onClick={() => handleQuantityChange(1)}>
+                <FiPlus />
+              </button>
+            </div>
+            <button className="add-to-cart-btn" onClick={handleAddToCart}>
+              <FiShoppingCart /> Agregar al carrito
+            </button>
+          </div>
+
+          {reviews.length > 0 && (
+            <div className="reviews-section">
+              <h3>Opiniones del producto</h3>
+              {reviews.map((review, index) => (
+                <div key={index} className="review-card">
+                  <div className="review-header">
+                    <div className="reviewer-avatar">
+                      {review.userName ? review.userName.charAt(0).toUpperCase() : 'U'}
+                    </div>
+                    <div className="review-info">
+                      <div className="reviewer-name">{review.userName || 'Usuario'}</div>
+                      <div className="review-date">
+                        {new Date(review.createdAt).toLocaleDateString()}
+                      </div>
+                    </div>
+                  </div>
+                  <div className="review-rating">
+                    {[...Array(5)].map((_, i) => (
+                      <FiStar
+                        key={i}
+                        fill={i < review.rating ? "currentColor" : "none"}
+                      />
+                    ))}
+                  </div>
+                  <p className="review-content">{review.comment}</p>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+      </div>
     </div>
   );
 };
